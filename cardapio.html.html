@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>cafetaria</title>
+        
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: var(--bg-principal);
+                color: var(--texto-escuro);
+                -webkit-font-smoothing: antialiased;
+                text-align: center; 
+            }
+            body {
+                height: 100vh;
+            }
+
+            body {
+                background-color: #f4f4f9;
+                font-family: 'segoe ui', Tahoma, Geneva, Verdana, sans-serif;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 30px;
+            }
+
+            .menu-principal{
+                background-color: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(10px);
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                box-sizing:border-box;
+                display: flex;
+                justify-content:space-between;
+                align-items: center;
+                padding: 15px 40px;
+                z-index: 9999;
+                border-bottom: 1px solid #eeebe6
+            }
+
+            body{
+                padding-top: 80px;
+                
+            }
+            
+            .container {
+                max-width: 1140px;
+                margin: 0 auto 120px auto; /* O terceiro número (120px) cria o espaço em branco embaixo */
+                padding: 0 20px;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 40px;
+            }
+            .vitrine {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .produto-card {
+                background-color: white;
+                border-radius: 12px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                text-align: center;
+                transition: transform 0.2s;
+            }
+
+            .produto-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .produto-titulo {
+                font-size: 1.2rem;
+                color: #222;
+                margin: 10px 0;
+            }
+
+            .produto-peco {
+                font-size: 1.4rem;
+                color: #2ecc71;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            .botao-comprar {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1rem;
+                border-radius: 6px;
+                cursor: pointer;
+                width: 100%;
+                transition: background-color 0.2s;
+            }
+
+            .botao-comprar:hover {
+                background-color: #2980b9;
+            }
+            
+            .produto-descricao {
+                font-size: 0.9 rem;
+                color: #666666;
+                margin: 0 0 15px 0;
+                line-height: 1.4;
+            }
+
+            .produto-imagem {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 15px;
+            }
+
+            .menu-principal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: space-between; /* Nome na esquerda, links na direita */
+                align-items: center;
+                padding: 20px 40px;
+                background-color: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid #eeebe6;
+                z-index: 9999;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #2b2625;
+                letter-spacing: 1px;
+            }  
+            
+            .links-menu a {
+                color: #7a7573;
+                text-decoration: none;
+                margin-left: 30px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                transition: color 0.2s ease;
+            }
+
+            .links-menu a:hover {
+                color: #8c6239;
+            }
+
+            body {
+                padding-top: 80px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav class="menu-principal">
+            <div class="logo">☕ M O D E R N O . C A F É</div>
+            <div class="links-menu">
+                <a href="home.html">Home</a>
+                <a href="cardapio.html">Cardápio</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </nav>
+        <h1>Nossos Produtos</h1>
+
+        <div class="vitrine">
+            
+            <div class="produto-card">
+                <img src="https://villacafe.com.br/blog/wp-content/uploads/2016/03/villa-cafe-gourmet-para-site.jpg" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Café Expresso</h2>
+                <p class="produto-descricao">Café expresso com leite vaporizado.</p>
+                <p class="produto-peco">R$ 5,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="https://www.allrecipes.com/thmb/aia3Z9f_PFZmEiAEXmF7p9BU6I4=/0x512/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/8624835-how-to-make-a-cappuccino-beauty-4x3-0301-13d55eaad60b42058f24369c292d4ccb.jpg" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Cappuccino</h2>
+                <p class="produto-descricao">Cappuccino com leite vaporizado.</p>
+                <p class="produto-peco">R$ 7,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="https://sarahsvegankitchen.com/wp-content/uploads/2024/05/Vegan-Croissants-1.jpg" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Croissant</h2>
+                <p class="produto-descricao">Croissant fresco e amanteigado.</p>
+                <p class="produto-peco">R$ 15,50</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+            
+            <div class="produto-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk90AekH6Nd56LUuMuw3U4jZuJLqROYagCmEJ4oad5HemgOJSbTpULtfo&s=10" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Bolo</h2>
+                <p class="produto-descricao">Bolo de chocolate, para sobremesa.</p>
+                <p class="produto-peco">R$ 20,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+        </div>
+
+    <footer style="height: 70px;"></footer>
+
+        <h1>Nossos Sumos</h1>
+
+    <footer style="height: 10px;"></footer>
+
+
+        <div class="vitrine">
+
+            <div class="produto-card">
+                <img src="https://fotos.web.sapo.io/i/G6001b2a2/20070796_oVlcZ.jpeg" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Sumo Natural</h2>
+                <p class="produto-descricao">Sumo natural de laranja, fresco e saudável.</p>
+                <p class="produto-peco">R$ 8,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzdxoRz8Vi13h_xkPVEOv3W2vWxa5oitF8SHcmttRadH4p1cwoSfWM2XZy&s=10" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Sumo Verde</h2>
+                <p class="produto-descricao">Sumo verde detox, saudável e refrescante.</p>
+                <p class="produto-peco">R$ 10,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="https://cdn.vidaativa.pt/uploads/2020/01/batidos-de-morango-e-leite-condensado.jpg" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Sumo de Morango</h2>
+                <p class="produto-descricao">Sumo de morango fresco, doce e delicioso.</p>
+                <p class="produto-peco">R$ 9,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIDqvL2xqGVJOG2GExYtBQwUJaycRt_700Y10oCAGTTwRJKGo-JG7Ii2Us&s=10" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Sumo de Manga</h2>
+                <p class="produto-descricao">Sumo de manga tropical, doce e refrescante.</p>
+                <p class="produto-peco">R$ 11,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+        </div>
+
+            <footer style="height: 10px;"></footer>
+
+            <h1>Nossos Chás</h1>
+
+            <footer style="height: 10px;"></footer>
+
+        <div class="vitrine"
+
+>
+            <div class="produto-card">
+                <img src="https://www.ferwer.pt/img/blog/zeleny-caj-ucinky-hrnek-podtacek-rostlina.webp" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Chá Verde</h2>
+                <p class="produto-descricao">Chá verde orgânico, rico em antioxidantes.</p>
+                <p class="produto-peco">R$ 6,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbaDvusq68L-r1ZVPVME1czQy4nbA4OnlVD-iW8PNi9LtGDzutqiIiKF28&s=10" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Chá de Camomila</h2>
+                <p class="produto-descricao">Chá de camomila relaxante e calmante.</p>
+                <p class="produto-peco">R$ 7,00</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbFLu3Plhi5I-6zIjiW1vw75dULoKFUp58VltwBnOj4yuqkDpyVhXV_aia&s=10" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Chá de Hortelã</h2>
+                <p class="produto-descricao">Chá de hortelã refrescante e digestivo.</p>
+                <p class="produto-peco">R$ 5,50</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="https://replantea.eu/cdn/shop/articles/Tipos_de_te_negro.jpg?v=1633106545" alt="Foto do Produto" class="produto-imagem">
+                <h2 class="produto-titulo">Chá Preto</h2>
+                <p class="produto-descricao">Chá preto encorpado.</p>
+                <p class="produto-peco">R$ 6,50</p>
+                <button class="botao-comprar">Comprar</button>
+            </div>
+        </div>
+
+    <footer style="height: 70px;"></footer>
+    </body>
+</html> 
