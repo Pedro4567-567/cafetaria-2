@@ -1,1 +1,203 @@
-<!doctypehtml>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Moderno Café</title>
+    <style>
+        /* CONFIGURAÇÕES GLOBAIS (Iguais às tuas outras páginas) */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 100px; /* Espaço para a barra fixa */
+            -webkit-font-smoothing: antialiased;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        /* DIV DO FUNDO (Exatamente igual ao teu cardápio atual) */
+        .fundo-site {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-image: url('https://images.pexels.com/photos/7955382/pexels-photo-7955382.jpeg?_gl=1*18nqa9n*_ga*Njk2OTk4MTQyLjE3ODc2NjIyMjg.*_ga_8JE65Q40S6*czE3ODc2NjIyMjckbzEkZzEkdDE3ODc2Njg3NTkkajQ3JGwwJGgw'); /* Usa o mesmo link da foto da cafetaria */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* BARRA DO TOPO FIXA (Com o link do "Sobre Nós" ativo) */
+        .menu-principal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eeebe6;
+            z-index: 9999;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2b2625;
+            letter-spacing: 1px;
+        }
+
+        .links-menu a {
+            color: #7a7573;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .links-menu a:hover {
+            color: lab(40.69% 7.13 17.9);
+        }
+
+        /* TÍTULOS COM O TRUQUE DE CONTRASTE QUE APRENDESTE */
+        h1, h2 {
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 40px 0 20px 0;
+        }
+
+        /* CONTAINER DA PÁGINA SOBRE */
+        .container-sobre {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* BLOCO PRINCIPAL (História Grande) */
+        .bloco-historia {
+            background-color: #cecbcb;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eeebe6;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: #4a4543;
+            font-size: 1.05rem;
+        }
+
+        .bloco-historia p {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* SEÇÃO DE VALORES (3 Caixinhas Lado a Lado) */
+        .grid-valores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .caixa-valor {
+            background-color: #cecbcb;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eeebe6;
+            text-align: center;
+        }
+
+        .caixa-valor h3 {
+            font-size: 1.25rem;
+            color: #2b2625;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .caixa-valor p {
+            font-size: 0.95rem;
+            color: #7a7573;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ESPAÇO NO FINAL */
+        .rodape-espaco {
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Div invisível que segura o teu fundo nítido -->
+    <div class="fundo-site"></div>
+
+    <!-- Barra do Topo -->
+    <nav class="menu-principal">
+        <div class="logo">📖 M O D E R N O . C A F É</div>
+        <div class="links-menu">
+            <a href="index.html">Home</a>
+            <a href="cardapio.html.html">Cardápio</a>
+            <a href="sobre nos.html">Sobre Nós</a> 
+            <a href="contacto.html">Contato</a>
+        </div>
+    </nav>
+
+    <div class="container-sobre">
+        
+        <h1>A Nossa História</h1>
+        
+        <!-- Bloco de Texto Principal Arredondado -->
+        <div class="bloco-historia">
+            <p>O <strong>Moderno Café</strong> nasceu da paixão genuína pela cultura do café especializado e pelo design minimalista. Fundado em 2026, o nosso objetivo sempre foi criar um refúgio urbano onde o tempo passa mais devagar e cada detalhe importa.</p>
+            <p>Acreditamos que servir café é uma arte. Por isso, acompanhamos de perto todo o processo: desde a escolha rigorosa dos pequenos produtores e cooperativas locais, passando pela torrefação cuidadosa dos grãos, até à extração perfeita na sua chávena.</p>
+            <p>Mais do que uma cafeteria, somos um ponto de encontro para mentes criativas, trabalhadores remotos e todos aqueles que apreciam uma pausa reconfortante no dia a dia.</p>
+        </div>
+
+        <h2>Os Nossos Pilares</h2>
+
+        <!-- As 3 Caixinhas de Valores Embaixo -->
+        <div class="grid-valores">
+            
+            <!-- Caixa 1 -->
+            <div class="caixa-valor">
+                <h3>Qualidade</h3>
+                <p>Grãos 100% arábica com pontuação alta e frescura garantida em cada moagem.</p>
+            </div>
+
+            <!-- Caixa 2 -->
+            <div class="caixa-valor">
+                <h3>Comunidade</h3>
+                <p>Um espaço aberto e acolhedor focado em apoiar a cultura e os clientes locais.</p>
+            </div>
+
+            <!-- Caixa 3 -->
+            <div class="caixa-valor">
+                <h3>Sustentabilidade</h3>
+                <p>Parcerias com produtores éticos e utilização de embalagens ecológicas.</p>
+            </div>
+
+        </div>
+
+        <!-- O respiro em branco no final da página -->
+        <div class="rodape-espaco"></div>
+
+    </div>
+
+</body>
+</html>
