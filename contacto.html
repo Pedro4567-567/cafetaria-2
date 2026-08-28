@@ -1,1 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Moderno Café</title>
+    <style>
+        /* CONFIGURAÇÕES GLOBAIS (Iguais às tuas outras páginas) */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 100px;
+            -webkit-font-smoothing: antialiased;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        /* DIV DO FUNDO (A tua foto da cafetaria) */
+        .fundo-site {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-image: url('https://images.pexels.com/photos/12568629/pexels-photo-12568629.jpeg?_gl=1*1pp1nwc*_ga*Njk2OTk4MTQyLjE3ODc2NjIyMjg.*_ga_8JE65Q40S6*czE3ODc2ODQ3MjUkbzIkZzEkdDE3ODc2ODYxNzAkajUwJGwwJGgw'); /* Usa o mesmo link da foto da cafetaria */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* BARRA DO TOPO FIXA (Com o link do "Contato") */
+        .menu-principal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eeebe6;
+            z-index: 9999;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2b2625;
+            letter-spacing: 1px;
+        }
+
+        .links-menu a {
+            color: #7a7573;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .links-menu a:hover {
+            color: lab(40.69% 7.13 17.9);
+        }
+
+        /* TÍTULO COM O TRUQUE DE CONTRASTE */
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            font-weight: 600;
+            font-size: 2.2rem;
+            margin: 40px 0 30px 0;
+        }
+
+        /* CONTAINER DIVIDIDO EM DOIS (Formulário na esquerda, Infos na direita) */
+        .container-contato {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr; /* O formulário ganha um pouco mais de largura */
+            gap: 30px;
+            align-items: center;
+        }
+
+        /* Se for no telemóvel, junta tudo numa coluna só */
+        @media (max-width: 768px) {
+            .container-contato {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* AS CAIXAS BRANCAS SÓLIDAS COM AS TUAS BORDAS ARREDONDADAS */
+        .caixa-formulario, .caixa-infos-direta {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            border: 1px solid #eeebe6;
+            background-position: center;
+            background-position: center;
+            text-align: center;
+        }
+
+        .caixa-formulario h2, .caixa-infos-direta h2 {
+            font-size: 1.4rem;
+            color: #2b2625;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* ESTILIZAÇÃO DOS CAMPOS DO FORMULÁRIO (INPUTS) */
+        .grupo-campo {
+            margin-bottom: 20px;
+        }
+
+        .grupo-campo label {
+            display: block;
+            font-size: 0.9rem;
+            color: #4a4543;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        /* A caixinha onde o utilizador escreve */
+        .grupo-campo input, .grupo-campo textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px; /* Cantos combinando com os botões */
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            background-color: #faf9f6;
+            font-family: inherit; /* Puxa a mesma letra limpa do body */
+        }
+
+        /* Quando o utilizador clica para escrever, a caixinha ganha uma borda azul */
+        .grupo-campo input:focus, .grupo-campo textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        /* O BOTÃO ENVIAR (Igualzinho ao teu botão de Comprar) */
+        .botao-enviar {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s ease;
+        }
+
+        .botao-enviar:hover {
+            background-color: #2980b9;
+        }
+
+        /* TEXTOS DA CAIXA DA DIREITA */
+        .info-linha {
+            margin-bottom: 20px;
+        }
+
+        .info-linha strong {
+            color: #2b2625;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .info-linha p {
+            margin: 0;
+            color: #7a7573;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ESPAÇO NO FINAL */
+        .rodape-espaco {
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Div do teu fundo estável -->
+    <div class="fundo-site"></div>
+
+    <!-- Barra do Topo -->
+    <nav class="menu-principal">
+        <div class="logo">📞 M O D E R N O . C A F É</div>
+        <div class="links-menu">
+            <a href="index.html">Home</a>
+            <a href="cardapio.html.html">Cardápio</a>
+            <a href="sobre nos.html">Sobre Nós</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </nav>
+
+    <h1>Fale Connosco</h1>
+
+    <div class="container-contato">
+        
+        <!-- Esquerda: O Formulário -->
+        <div class="caixa-formulario">
+            <h2>Envie uma Mensagem</h2>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Entraremos em contacto em breve.');">
+                
+                <div class="grupo-campo">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Digite o seu nome" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="email">E-mail de Contacto</label>
+                    <input type="email" id="email" placeholder="seu-email@exemplo.com" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="mensagem">Sua Mensagem</label>
+                    <!-- textarea serve para textos longos de várias linhas -->
+                    <textarea id="mensagem" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+                </div>
+
+                <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+
+            </form>
+        </div>
+
+        <!-- Direita: Informações Úteis -->
+        <div class="caixa-infos-direta">
+            <h2>Outras Formas</h2>
+            
+            <div class="info-linha">
+                <strong>📍 Localização</strong>
+                <p>Avenida da Liberdade, 123<br>1250-001 Lisboa, Portugal</p>
+            </div>
+
+            <div class="info-linha">
+                <strong>📞 Telefone</strong>
+                <p>+351 210 000 000</p>
+            </div>
+
+            <div class="info-linha">
+                <strong>✉️ E-mail Geral</strong>
+                <p>ola@modernocafe.com</p>
+            </div>
+
+            <div class="info-linha">
+                <strong>📸 Redes Sociais</strong>
+                <p>@modernocafe.oficial</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- O respiro em branco no final da página -->
+    <div class="rodape-espaco"></div>
+
+</body>
+</html>
