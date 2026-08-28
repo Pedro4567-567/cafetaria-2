@@ -1,1 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Moderno Café</title>
+    <style>
+        /* CONFIGURAÇÕES GLOBAIS (Iguais ao teu cardápio) */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Fundo off-white limpo */
+            color: #2b2625;
+            padding-top: 100px; /* Espaço para a barra fixa não tapar o conteúdo */
+            -webkit-font-smoothing: antialiased
+        }
+        
+        body{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 100px;
+            -webkit-font-smoothing: antialiased;
+            background-image:
+                    url(https://images.pexels.com/photos/10849558/pexels-photo-10849558.jpeg?_gl=1*11pytce*_ga*Njk2OTk4MTQyLjE3ODc2NjIyMjg.*_ga_8JE65Q40S6*czE3ODc2NjIyMjckbzEkZzEkdDE3ODc2NjI3NzEkajU1JGwwJGgw);
+            overflow: hidden;
+            max-width: 100vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        /* 1. BARRA DO TOPO FIXA (Exatamente igual à tua) */
+        .menu-principal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eeebe6;
+            z-index: 9999;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2b2625;
+            letter-spacing: 1px;
+        }
+
+        .links-menu a {
+            color: #7a7573;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .links-menu a:hover {
+            color: lab(40.69% 7.13 17.9); /* Azul combinando com os teus botões */
+        }
+
+        /* CONTAINER DA PÁGINA */
+        .conteudo-home {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 2. RECTÂNGULO DO TOPO (Banner Principal Clean) */
+        .banner-topo {
+            width: 100%;
+            height: 380px;
+            /* Imagem profissional de uma cafetaria moderna com película escura suave */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/2309593/pexels-photo-2309593.png?_gl=1*138i9b5*_ga*Njk2OTk4MTQyLjE3ODc2NjIyMjg.*_ga_8JE65Q40S6*czE3ODc2NjIyMjckbzEkZzEkdDE3ODc2NjM0NDYkajckbDAkaDA.');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px; /* Cantos arredondados na mesma linha dos teus produtos */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            max-width: 100vw;
+            overflow-x: hidden;
+
+        }
+
+        .banner-topo h1 {
+            font-size: 2.5rem;
+            margin: 0 0 15px 0;
+            font-weight: 600;
+        }
+
+        .banner-topo p {
+            font-size: 1.2rem;
+            margin: 0 0 25px 0;
+            opacity: 0.9;
+        }
+
+        /* Botão de Destaque no Banner */
+        .botao-banner {
+            background-color: #3498db; /* O mesmo azul dos teus botões comprar */
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        .botao-banner:hover {
+            background-color: #2980b9;
+        }
+
+        /* 3. BLOCOS DE INFORMAÇÃO (Estilo igual aos teus cartões de produto) */
+        .grade-informacoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .caixa-info {
+            background-color: #ffffff;
+            border-radius: 12px; /* Mesma curvatura dos teus produtos */
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* Mesma sombra suave */
+            border: 1px solid #eeebe6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .caixa-info h2 {
+            font-size: 1.4rem;
+            color: #2b2625;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center; /* Centralizado como os teus títulos */
+        }
+
+        .caixa-info p {
+            font-size: 0.95rem;
+            color: #7a7573;
+            line-height: 1.6;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Faz o bloco da história ser um retângulo mais comprido */
+        .bloco-largo {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 900px) {
+            .bloco-largo {
+                grid-column: span 1;
+            }
+        }
+
+        /* 4. ESPAÇO EM BRANCO NO FINAL */
+        .rodape-espaco {
+            height: 120px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra do Topo -->
+    <nav class="menu-principal">
+        <div class="logo">🏠 M O D E R N O . C A F É</div>
+        <div class="links-menu">
+            <a href="index.html">Home</a> <!-- Destacado em castanho na home -->
+            <a href="cardapio.html.html">Cardápio</a>
+            <a href="sobre nos.html">Sobre Nós</a>
+            <a href="contacto.html">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal da Home -->
+    <main class="conteudo-home">
+
+        <!-- Banner com retângulo grande no topo -->
+        <div class="banner-topo">
+            <h1>O Seu Espaço de Café Diário</h1>
+            <h2>Grãos selecionados, ambiente acolhedor e a torra perfeita.</h2>
+            <a href="cardapio.html" class="botao-banner">Ver o Cardápio</a>
+        </div>
+
+        <!-- Grade de Blocos Informativos em Baixo -->
+        <div class="grade-informacoes">
+            
+            <!-- Quadrado 1 -->
+            <div class="caixa-info">
+                <h2>Horário de Funcionamento</h2>
+                <p>Estamos abertos todos os dias para o receber.<br>Segunda a Domingo: 08:00 às 20:00</p>
+            </div>
+
+            <!-- Quadrado 2 -->
+            <div class="caixa-info">
+                <h2>Espaço Confortável</h2>
+                <p>Contamos com internet de alta velocidade e mesas preparadas para quem gosta de trabalhar a tomar um bom café.</p>
+            </div>
+
+            <!-- Retângulo Comprido (História) -->
+            <div class="caixa-info bloco-largo">
+                <h2>A Nossa Missão</h2>
+                <p>No Moderno Café, acreditamos que o café não é apenas uma bebida, mas sim uma experiência. Dedicamo-nos a trazer os melhores grãos do mundo diretamente para a sua chávena, num ambiente minimalista desenhado para inspirar o seu dia.</p>
+            </div>
+
+        </div>
+
+
+        <!-- Espaço em branco no final da página para respiro visual -->
+        <div class="rodape-espaco"></div>
+
+    </main>
+
+</body>
+</html>
