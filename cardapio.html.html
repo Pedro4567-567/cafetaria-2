@@ -29,7 +29,7 @@
             }
 
             h1 {
-                color: #333;
+                color: white;
                 margin-bottom: 30px;
             }
 
@@ -76,6 +76,9 @@
                 padding: 20px;
                 text-align: center;
                 transition: transform 0.2s;
+                width:250px;
+                display: flex;
+                flex-direction: column;
             }
 
             .produto-card:hover {
@@ -111,6 +114,62 @@
                 background-color: #2980b9;
             }
             
+            /* REGRA DO BODY (Garante que a página rola livremente) */
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                padding-top: 100px; /* Espaço para o menu do topo */
+                -webkit-font-smoothing: antialiased;
+                max-width: 100vw;
+                overflow-x: hidden; 
+            }
+
+/* REGRAS DA IMAGEM DE FUNDO FIXA */
+            .fundo-site {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: -1; /* Fica atrás de tudo */
+    
+                /* Substitui o link abaixo pelo link da foto da tua cafetaria */
+                background-image: url('https://images.pexels.com/photos/3465604/pexels-photo-3465604.jpeg?_gl=1*luhd63*_ga*Njk2OTk4MTQyLjE3ODc2NjIyMjg.*_ga_8JE65Q40S6*czE3ODc3NjY5MDEkbzckZzEkdDE3ODc3NjcxNTkkajU5JGwwJGgw'); 
+    
+                background-size: cover;      /* Força a foto a caber no ecrã */
+                background-position: center;  /* Centraliza o foco da imagem */
+                background-repeat: no-repeat; /* Impede a foto de se duplicar */
+            }
+
+            /* LEMBRETE: Para as tuas caixinhas terem a transparência de 0.85 */
+            .caixa-info, .produto-card, .caixa-formulario, .caixa-infos-direta {
+                background-color: rgba(255, 255, 255, 1); /* Fundo branco 85% opaco */
+                border-radius: 12px;
+                padding: 30px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+                border: 1px solid #eeebe6;
+            }
+
+
+            .botao-adicionar {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1rem;
+                border-radius: 6px;
+                cursor: pointer;
+                width: 100%;
+                transition: background-color 0.2s;
+                margin-top: auto;
+            }
+
+            .botao-adicionar:hover {
+                background-color: #2980b9;
+            }
+
+
             .produto-descricao {
                 font-size: 0.9 rem;
                 color: #666666;
@@ -165,16 +224,31 @@
             body {
                 padding-top: 80px;
             }
+
+            /* Atualiza a caixa da direita para centralizar tudo */
+            .caixa-infos-direta {
+                background-color: #ffffff;
+                border-radius: 12px;
+                padding: 35px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+                border: 1px solid #eeebe6;
+    
+                /* ADICIONE ESTA LINHA PARA CENTRALIZAR O CONTEÚDO */
+                text-align: center; 
+            }
+
         </style>
     </head>
     <body>
 
+        <div class="fundo-site"></div>
+
         <nav class="menu-principal">
             <div class="logo">☕ M O D E R N O . C A F É</div>
             <div class="links-menu">
-                <a href="home.html">Home</a>
-                <a href="cardapio.html">Cardápio</a>
-                <a href="sobre.html">Sobre Nós</a>
+                <a href="index.html">Home</a>
+                <a href="cardapio.html.html">Cardápio</a>
+                <a href="sobre nos.html">Sobre Nós</a>
                 <a href="contato.html">Contato</a>
             </div>
         </nav>
@@ -187,7 +261,7 @@
                 <h2 class="produto-titulo">Café Expresso</h2>
                 <p class="produto-descricao">Café expresso com leite vaporizado.</p>
                 <p class="produto-peco">R$ 5,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho('Café Expresso' , 5.00)">Adicionar</button>
             </div>
 
             <div class="produto-card">
@@ -195,7 +269,7 @@
                 <h2 class="produto-titulo">Cappuccino</h2>
                 <p class="produto-descricao">Cappuccino com leite vaporizado.</p>
                 <p class="produto-peco">R$ 7,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho('Cappuccino' , 7.00)">Adicionar</button>
             </div>
 
             <div class="produto-card">
@@ -203,7 +277,7 @@
                 <h2 class="produto-titulo">Croissant</h2>
                 <p class="produto-descricao">Croissant fresco e amanteigado.</p>
                 <p class="produto-peco">R$ 15,50</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho ('Croissant' , 15.50)">Adicionar</button>
             </div>
             
             <div class="produto-card">
@@ -211,7 +285,7 @@
                 <h2 class="produto-titulo">Bolo</h2>
                 <p class="produto-descricao">Bolo de chocolate, para sobremesa.</p>
                 <p class="produto-peco">R$ 20,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho ('Bolo' , 20.00)">Adicionar</button>
             </div>
 
         </div>
@@ -230,7 +304,7 @@
                 <h2 class="produto-titulo">Sumo Natural</h2>
                 <p class="produto-descricao">Sumo natural de laranja, fresco e saudável.</p>
                 <p class="produto-peco">R$ 8,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho('Sumo Natural' , 8.00)">Adicionar</button>
             </div>
 
             <div class="produto-card">
@@ -238,7 +312,7 @@
                 <h2 class="produto-titulo">Sumo Verde</h2>
                 <p class="produto-descricao">Sumo verde detox, saudável e refrescante.</p>
                 <p class="produto-peco">R$ 10,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho ('Sumo Verde' , 10.00)">Adicionar</button>
             </div>
 
             <div class="produto-card">
@@ -246,7 +320,7 @@
                 <h2 class="produto-titulo">Sumo de Morango</h2>
                 <p class="produto-descricao">Sumo de morango fresco, doce e delicioso.</p>
                 <p class="produto-peco">R$ 9,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho ('Sumo de Morango' , 9.00)">Adicionar</button>
             </div>
 
             <div class="produto-card">
@@ -254,7 +328,7 @@
                 <h2 class="produto-titulo">Sumo de Manga</h2>
                 <p class="produto-descricao">Sumo de manga tropical, doce e refrescante.</p>
                 <p class="produto-peco">R$ 11,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho('Sumo de manga' , 11.00)">Adicionar</button>
             </div>
         </div>
 
@@ -272,7 +346,7 @@
                 <h2 class="produto-titulo">Chá Verde</h2>
                 <p class="produto-descricao">Chá verde orgânico, rico em antioxidantes.</p>
                 <p class="produto-peco">R$ 6,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho('Chá Verde' , 6.00)">Adicionar</button>
             </div>
 
             <div class="produto-card">
@@ -280,7 +354,7 @@
                 <h2 class="produto-titulo">Chá de Camomila</h2>
                 <p class="produto-descricao">Chá de camomila relaxante e calmante.</p>
                 <p class="produto-peco">R$ 7,00</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho('Chá de Camomila' , 7.00)">Adicionar</button>
             </div>
 
             <div class="produto-card">
@@ -288,7 +362,7 @@
                 <h2 class="produto-titulo">Chá de Hortelã</h2>
                 <p class="produto-descricao">Chá de hortelã refrescante e digestivo.</p>
                 <p class="produto-peco">R$ 5,50</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho ('Chá de Hortelã' , 5.50)">Adicionar</button>
             </div>
 
             <div class="produto-card">
@@ -296,10 +370,97 @@
                 <h2 class="produto-titulo">Chá Preto</h2>
                 <p class="produto-descricao">Chá preto encorpado.</p>
                 <p class="produto-peco">R$ 6,50</p>
-                <button class="botao-comprar">Comprar</button>
+                <button class="botao-adicionar" onclick="adicionarAoCarrinho('Chá Preto' , 6.50)">Adicionar</button>
             </div>
         </div>
 
-    <footer style="height: 70px;"></footer>
-    </body>
+        <!-- CAIXA DO CARRINHO COMPACTA E CENTRALIZADA -->
+<div style="display: flex; justify-content: center; margin: 40px 0;">
+    <aside class="carrinho-compacto" style="background-color: rgba(255, 255, 255, 0.85); border-radius: 12px; padding: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); border: 1px solid #eeebe6; width: 320px; text-align: center;">
+        <h2 style="color: #2b2625; margin-top: 0; font-size: 1.2rem; border-bottom: 1px solid #eeebe6; padding-bottom: 10px;">Seu Pedido</h2>
+        
+        <!-- Lista de itens que o JavaScript vai preencher -->
+        <ul id="lista-carrinho" style="list-style: none; padding: 0; margin: 15px 0; max-height: 150px; overflow-y: auto;">
+            <!-- Itens entram aqui -->
+        </ul>
+        
+        <!-- Total -->
+        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; border-top: 1px solid #eeebe6; padding-top: 15px; color: #2b2625;">
+            <span>Total:</span>
+            <span id="preco-final">R$ 0,00</span>
+        </div>
+        
+        <button class="botao-finalizar" onclick="finalizarPedido()" style="background-color: #3498db; color: white; border: none; padding: 10px; font-weight: 600; border-radius: 6px; cursor: pointer; width: 100%; margin-top: 15px; font-size: 0.95rem;">Confirmar Pedido</button>
+    </aside>
+</div>
+
+
+        <script>
+    let totalGeral = 0;
+    const listaCarrinho = document.getElementById('lista-carrinho');
+    const precoFinalTxt = document.getElementById('preco-final');
+
+    function adicionarAoCarrinho(nomeProduto, precoProduto) {
+        // 1. Cria a linha do item (<li>)
+        const novoItem = document.createElement('li');
+        novoItem.style.display = 'flex';
+        novoItem.style.justifyContent = 'space-between';
+        novoItem.style.alignItems = 'center';
+        novoItem.style.padding = '8px 0';
+        novoItem.style.fontSize = '0.9rem';
+        novoItem.style.color = '#4a4543';
+        novoItem.style.borderBottom = '1px dashed #eeebe6';
+        
+        // 2. Monta o HTML interno da linha com o texto do produto E o botão X na direita
+        novoItem.innerHTML = `
+            <span>${nomeProduto}</span> 
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span>R$ ${precoProduto.toFixed(2).replace('.', ',')}</span>
+                <!-- O botão X chama a função de remover e passa a si mesmo e o preço como ordem -->
+                <button onclick="removerDoCarrinho(this, ${precoProduto})" style="background: none; border: none; color: #e74c3c; font-weight: bold; cursor: pointer; padding: 0 5px; font-size: 1rem;">✕</button>
+            </div>
+        `;
+        
+        // 3. Adiciona na tela e soma no total
+        listaCarrinho.appendChild(novoItem);
+        totalGeral += precoProduto;
+        precoFinalTxt.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+    }
+
+    // NOVA FUNÇÃO: Roda quando o cliente clica no botão ✕
+    function removerDoCarrinho(botaoX, precoProduto) {
+        // Encontra a linha (<li>) inteira onde o botão X foi clicado
+        const itemParaRemover = botaoX.closest('li');
+        
+        // Remove essa linha da tela
+        itemParaRemover.remove();
+        
+        // Subtrai o valor do produto do total geral da conta
+        totalGeral -= precoProduto;
+        
+        // Segurança: Evita que por causa de arredondamentos matemáticos o total fique "-R$ 0,00"
+        if (totalGeral < 0.01) {
+            totalGeral = 0;
+        }
+        
+        // Atualiza o texto do preço final na tela
+        precoFinalTxt.innerText = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
+    }
+
+    function finalizarPedido() {
+        if (totalGeral === 0) {
+            alert("O seu carrinho está vazio!");
+        } else {
+            alert(`Pedido Confirmado!\nTotal: R$ ${totalGeral.toFixed(2).replace('.', ',')}`);
+            listaCarrinho.innerHTML = '';
+            totalGeral = 0;
+            precoFinalTxt.innerText = 'R$ 0,00';
+        }
+    }
+</script>
+
+
+
+        <footer style="height: 70px;"></footer>
+</body>
 </html> 
